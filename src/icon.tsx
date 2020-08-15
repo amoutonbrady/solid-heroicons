@@ -1,8 +1,8 @@
 import { Component } from "solid-js";
-import { spread, template, effect } from "solid-js/dom";
+import { spread, template, effect, setAttribute } from "solid-js/dom";
 
 type Props = JSX.CustomAttributes<SVGSVGElement> &
-  JSX.SVGAttributes<SVGSVGElement> & { path: string };
+  JSX.SVGAttributes<SVGSVGElement> & { path: string; outline: boolean };
 
 /**
  * The Icon helper is just a SVG wrapper that can take any attributes
@@ -20,10 +20,9 @@ type Props = JSX.CustomAttributes<SVGSVGElement> &
  */
 export const Icon: Component<Props> = (props) => {
   return () => {
-    const el = template(
-      `<svg fill="none" viewBox="0 0 24 24" stroke="currentColor"></svg>`,
-      2
-    );
+    const el = template(`<svg fill="none" viewBox="0 0 24 24"></svg>`, 2);
+    setAttribute(el, "fill", props.outline ? "none" : "currentColor");
+    setAttribute(el, "stroke", props.outline ? "currentColor" : "none");
     effect(() => (el.innerHTML = props.path));
     spread(el, props);
     return el;
