@@ -2,7 +2,7 @@ import { Component } from "solid-js";
 import { spread, template, effect, setAttribute } from "solid-js/dom";
 
 type Props = JSX.CustomAttributes<SVGSVGElement> &
-  JSX.SVGAttributes<SVGSVGElement> & { path: string; outline: boolean };
+  JSX.SVGAttributes<SVGSVGElement> & { path: string; outline?: boolean };
 
 /**
  * The Icon helper is just a SVG wrapper that can take any attributes
