@@ -28,7 +28,7 @@ async function main() {
   await remove(TMP);
 }
 
-async function generateIcons({ path, name, dist = "dist" }) {
+async function generateIcons({ path, name }) {
   const icons = await readdir(path);
   const exportedIcons = [];
   const exportedTypes = [];
@@ -49,22 +49,14 @@ async function generateIcons({ path, name, dist = "dist" }) {
 
   const exportedIconsStr = exportedIcons.join("\n");
   const exportedTypesStr = exportedTypes.join("\n");
+  await outputFile(join(process.cwd(), name, "index.js"), exportedIconsStr, {
+    encoding: "utf-8",
+  });
+  await outputFile(join(process.cwd(), name, "index.d.ts"), exportedTypesStr, {
+    encoding: "utf-8",
+  });
   await outputFile(
-    join(process.cwd(), dist, name, "index.js"),
-    exportedIconsStr,
-    {
-      encoding: "utf-8",
-    }
-  );
-  await outputFile(
-    join(process.cwd(), dist, name, "index.d.ts"),
-    exportedTypesStr,
-    {
-      encoding: "utf-8",
-    }
-  );
-  await outputFile(
-    join(process.cwd(), dist, name, "package.json"),
+    join(process.cwd(), name, "package.json"),
     dd`
         {
             "name": "@amoutonbrady/solid-heroicons/${name}",

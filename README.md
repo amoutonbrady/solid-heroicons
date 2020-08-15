@@ -16,6 +16,8 @@ You can import every icon from heroicons [solid](https://github.com/tailwindlabs
 
 You can import the `Icon` component helper from `@amoutonbrady/solid-heroicons`. This is just a SVGElement wrapper.
 
+By default the `fill` attribute of the SVG is set to `currentColor` which means you can give any color you want to the SVG by setting the css `color` attribute on SVG or any parent higher.
+
 ```tsx
 import { render } from 'solid-js/dom'
 import { Icon } from '@amoutonbrady/solid-heroicons';

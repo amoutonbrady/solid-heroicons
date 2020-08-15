@@ -12,8 +12,8 @@
   },
   "files": [
     "dist",
-    "dist/outline",
-    "dist/solid"
+    "outline",
+    "solid"
   ],
   "scripts": {
     "build:icons": "node -r esm scripts/fetchIcons",
