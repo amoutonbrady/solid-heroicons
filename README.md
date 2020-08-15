@@ -31,3 +31,7 @@ const App = () => <>
 
 render(() => App, document.getElementById('app'))
 ```
+
+## Troubleshoot
+
+- Some icons seems to be broken [here's the issue about it](https://github.com/tailwindlabs/heroicons/issues/93)
