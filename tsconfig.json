@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "module": "ESNext",
+    "target": "ESNext",
+    "moduleResolution": "node",
+    "jsx": "preserve",
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "strict": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "isolatedModules": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "tests"]
+}
