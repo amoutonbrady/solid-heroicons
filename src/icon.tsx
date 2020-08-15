@@ -12,10 +12,12 @@ type Props = JSX.CustomAttributes<SVGSVGElement> &
  * It will take the parent CSS `color` value.
  *
  * @example
- * ```tsx
+ * ```tsx"
  * import { arrowLeft } from '@amoutonbrady/solid-heroicons/outline'
+ * import { arrowRight } from '@amoutonbrady/solid-heroicons/solid'
  *
- * const icon = <Icon path={arrowLeft} class="text-gray-900 h-6" />
+ * const icon = <Icon path={arrowLeft} outline class="text-gray-900 h-6" />
+ * const icon2 = <Icon path={arrowRight} class=text-gray-900 h-6" />
  * ```
  */
 export const Icon: Component<Props> = (props) => {

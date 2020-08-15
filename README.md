@@ -24,7 +24,10 @@ import { Icon } from '@amoutonbrady/solid-heroicons';
 import { arrowLeft } from '@amoutonbrady/solid-heroicons/solid;
 import { arrowRight } from '@amoutonbrady/solid-heroicons/outline;
 
-const App = () => <Icon path={arrowLeft} />
+const App = () => <>
+    <Icon path={arrowLeft} />
+    <Icon path={arrowRight} outline /> {/* You need to specify outline when using outline */}
+</>
 
 render(() => App, document.getElementById('app'))
 ```
