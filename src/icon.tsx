@@ -1,5 +1,5 @@
 import { Component } from "solid-js";
-import { spread } from "solid-js/dom";
+import { spread, template, effect } from "solid-js/dom";
 
 type Props = JSX.CustomAttributes<SVGSVGElement> &
   JSX.SVGAttributes<SVGSVGElement> & { path: string };
@@ -20,15 +20,12 @@ type Props = JSX.CustomAttributes<SVGSVGElement> &
  */
 export const Icon: Component<Props> = (props) => {
   return () => {
-    const el = (
-      <svg
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        innerHTML={props.path}
-      />
+    const el = template(
+      `<svg fill="none" viewBox="0 0 24 24" stroke="currentColor"></svg>`,
+      2
     );
-    spread(el as Element, props);
+    effect(() => (el.innerHTML = props.path));
+    spread(el, props);
     return el;
   };
 };
