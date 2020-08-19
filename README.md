@@ -2,6 +2,8 @@
 
 [Heroicons](https://github.com/tailwindlabs/heroicons) intergration for [solid-js](https://github.com/ryansolid/solid).
 
+[Demo](https://codesandbox.io/s/solid-heroicons-f26s1?file=/src/index.tsx)
+
 ## Installation
 
 ```bash
