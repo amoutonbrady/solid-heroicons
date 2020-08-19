@@ -20,15 +20,17 @@ async function main() {
   await generateIcons({
     path: SOLID_DIST,
     name: "solid",
+    outline: false,
   });
   await generateIcons({
     path: OUTLINE_DIST,
     name: "outline",
+    outline: true,
   });
   await remove(TMP);
 }
 
-async function generateIcons({ path, name }) {
+async function generateIcons({ path, name, outline }) {
   const icons = await readdir(path);
   const exportedIcons = [];
   const exportedTypes = [];
@@ -41,8 +43,8 @@ async function generateIcons({ path, name }) {
     cleanedSVG.pop();
 
     const code = cleanedSVG.join(" ").replace(/\s{2,}/g, "");
-    const iconPathsStr = dd`export const ${iconName} = \`${code}\``;
-    const iconTypeStr = dd`export declare const ${iconName}: string;`;
+    const iconPathsStr = dd`export const ${iconName} = { path: \`${code}\`, outline: ${outline} };`;
+    const iconTypeStr = dd`export declare const ${iconName}: { path: string; outline: boolean; };`;
     exportedIcons.push(iconPathsStr);
     exportedTypes.push(iconTypeStr);
   }
