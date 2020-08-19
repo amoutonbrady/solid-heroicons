@@ -27,12 +27,30 @@ interface Props extends JSX.SvgSVGAttributes<SVGSVGElement> {
  */
 export const Icon: Component<Props> = (props) => {
   const el = template(`<svg viewBox="0 0 24 24"></svg>`, 2);
-  const [internal, external] = splitProps(props, ["path"]);
-  spread(el, external, true);
+  const [internal, external] = splitProps(props, [
+    "path",
+    "class",
+    "className",
+  ]);
+  spread(el, external, true, true);
 
   createEffect(() => {
     setAttribute(el, "fill", internal.path.outline ? "none" : "currentColor");
     setAttribute(el, "stroke", internal.path.outline ? "currentColor" : "none");
+  });
+
+  /**
+   * Patch while waiting for clarification on this issue:
+   * https://github.com/ryansolid/dom-expressions/issues/24
+   */
+  createEffect(() => {
+    if (internal.className && internal.class) {
+      setAttribute(el, "class", internal.className + " " + internal.class);
+    } else if (internal.className) {
+      setAttribute(el, "class", internal.className);
+    } else if (internal.class) {
+      setAttribute(el, "class", internal.class);
+    }
   });
 
   createEffect(() => {
