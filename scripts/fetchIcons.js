@@ -41,7 +41,7 @@ async function generateIcons({ path, name, outline }) {
     const cleanedSVG = iconSVG
       .split("\n")
       .filter(Boolean)
-      .map((path) => path.replace(/fill="(#\w+)"/g, 'fill="currentColor"'));
+      .map((path) => path.replace(/fill="(#\w+)"/g, 'fill="transparent"'));
     cleanedSVG.shift();
     cleanedSVG.pop();
 
