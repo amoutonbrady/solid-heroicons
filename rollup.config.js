@@ -16,6 +16,7 @@ const config = {
       extensions: [".ts", ".tsx"],
     }),
     babel({
+      babelHelpers: "bundled",
       extensions: [".ts", ".tsx"],
       presets: ["@babel/preset-typescript", "babel-preset-solid"],
     }),

@@ -1,5 +1,4 @@
-import { Component, createEffect, splitProps } from "solid-js";
-import { spread, template, setAttribute } from "solid-js/dom";
+import { Component, splitProps } from "solid-js";
 
 interface Props extends JSX.SvgSVGAttributes<SVGSVGElement> {
   /**
@@ -26,36 +25,17 @@ interface Props extends JSX.SvgSVGAttributes<SVGSVGElement> {
  * ```
  */
 export const Icon: Component<Props> = (props) => {
-  const el = template(`<svg viewBox="0 0 24 24"></svg>`, 2);
-  const [internal, external] = splitProps(props, [
-    "path",
-    "class",
-    "className",
-  ]);
-  spread(el, external, true, true);
+  const [internal, external] = splitProps(props, ["path"]);
 
-  createEffect(() => {
-    setAttribute(el, "fill", internal.path.outline ? "none" : "currentColor");
-    setAttribute(el, "stroke", internal.path.outline ? "currentColor" : "none");
-  });
-
-  /**
-   * Patch while waiting for clarification on this issue:
-   * https://github.com/ryansolid/dom-expressions/issues/24
-   */
-  createEffect(() => {
-    if (internal.className && internal.class) {
-      setAttribute(el, "class", internal.className + " " + internal.class);
-    } else if (internal.className) {
-      setAttribute(el, "class", internal.className);
-    } else if (internal.class) {
-      setAttribute(el, "class", internal.class);
-    }
-  });
-
-  createEffect(() => {
-    el.innerHTML = internal.path.path;
-  });
-
-  return el;
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      style={{
+        fill: internal.path.outline ? "none" : "currentColor",
+        stroke: internal.path.outline ? "currentColor" : "none",
+      }}
+      {...external}
+      innerHTML={internal.path.path}
+    />
+  );
 };

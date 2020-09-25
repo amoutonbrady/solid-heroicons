@@ -1,12 +1,11 @@
 {
   "name": "@amoutonbrady/solid-heroicons",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Heroicons for Solid",
   "main": "dist/icon.js",
   "module": "dist/icon.esm.js",
   "types": "dist/icon.d.ts",
   "sideEffects": false,
-  "private": false,
   "publishConfig": {
     "access": "public"
   },
@@ -16,11 +15,11 @@
     "solid"
   ],
   "scripts": {
-    "build:icons": "node -r esm scripts/fetchIcons",
+    "build:icons": "yarn node -r esm scripts/fetchIcons",
     "build:component": "rollup -c",
     "build:types": "tsc",
-    "build": "pnpm build:icons && pnpm build:component && pnpm build:types",
-    "prepublishOnly": "pnpm build"
+    "build": "yarn build:icons && yarn build:component && yarn build:types",
+    "prepublishOnly": "yarn build"
   },
   "keywords": [
     "icon",
@@ -39,23 +38,24 @@
   "homepage": "https://github.com/amoutonbrady/solid-heroicons#readme",
   "license": "ISC",
   "peerDependencies": {
-    "solid-js": "^0.18.14"
+    "solid-js": "^0.20.0"
   },
   "dependencies": {
-    "solid-js": "^0.19.0-beta.0"
+    "solid-js": "^0.20.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.11.1",
+    "@babel/core": "^7.11.6",
     "@babel/preset-typescript": "^7.10.4",
-    "@rollup/plugin-babel": "^5.2.0",
+    "@babel/types": "^7.11.5",
+    "@rollup/plugin-babel": "^5.2.1",
     "@rollup/plugin-node-resolve": "^9.0.0",
-    "babel-preset-solid": "^0.19.0-beta.0",
+    "babel-preset-solid": "^0.20.0",
     "change-case": "^4.1.1",
     "dedent": "^0.7.0",
     "degit": "^2.8.0",
     "esm": "^3.2.25",
     "fs-extra": "^9.0.1",
-    "rollup": "^2.26.0",
-    "typescript": "^4.1.0-dev.20200815"
+    "rollup": "^2.28.2",
+    "typescript": "^4.0.3"
   }
 }

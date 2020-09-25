@@ -5,9 +5,9 @@ import dd from "dedent";
 import degit from "degit";
 
 const TMP = join(process.cwd(), "tmp");
-const SOLID_SRC = "tailwindlabs/heroicons/solid";
+const SOLID_SRC = "tailwindlabs/heroicons/optimized/solid";
 const SOLID_DIST = join(TMP, "solid");
-const OUTLINE_SRC = "tailwindlabs/heroicons/outline";
+const OUTLINE_SRC = "tailwindlabs/heroicons/optimized/outline";
 const OUTLINE_DIST = join(TMP, "outline");
 
 async function main() {
@@ -38,7 +38,10 @@ async function generateIcons({ path, name, outline }) {
   for (const icon of icons) {
     const iconName = camelCase(parse(icon).name);
     const iconSVG = await readFile(join(path, icon), { encoding: "utf-8" });
-    const cleanedSVG = iconSVG.split("\n").filter(Boolean);
+    const cleanedSVG = iconSVG
+      .split("\n")
+      .filter(Boolean)
+      .map((path) => path.replace(/fill="(#\w+)"/g, 'fill="currentColor"'));
     cleanedSVG.shift();
     cleanedSVG.pop();
 
