@@ -1,6 +1,6 @@
 {
   "name": "@amoutonbrady/solid-heroicons",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Heroicons for Solid",
   "main": "./dist/icon.common.js",
   "module": "./dist/icon.esm.js",
