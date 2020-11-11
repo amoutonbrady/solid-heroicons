@@ -35,7 +35,10 @@ async function main() {
 async function generateIcons({ path, name, outline }) {
   const icons = await readdir(path);
   const exportedIcons = [];
-  const exportedIconsCjs = [];
+  const exportedIconsCjs = [
+    "'use strict;'",
+    "Object.defineProperty(exports, '__esModule', { value: true });",
+  ];
   const exportedTypes = [];
 
   for (const icon of icons) {
@@ -51,7 +54,7 @@ async function generateIcons({ path, name, outline }) {
     const code = cleanedSVG.join(" ").replace(/\s{2,}/g, "");
     const iconPathsStr = dd`export const ${iconName} = { path: \`${code}\`, outline: ${outline} };`;
     const iconTypeStr = dd`export declare const ${iconName}: { path: string; outline: boolean; };`;
-    const iconPathsStrCjs = dd`module.exports.${iconName} = { path: \`${code}\`, outline: ${outline} };`;
+    const iconPathsStrCjs = dd`exports.${iconName} = { path: \`${code}\`, outline: ${outline} };`;
     exportedIcons.push(iconPathsStr);
     exportedTypes.push(iconTypeStr);
     exportedIconsCjs.push(iconPathsStrCjs);

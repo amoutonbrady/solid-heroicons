@@ -12,7 +12,7 @@ const config = {
   output: [
     { file: pkg.main, format: "cjs" },
     { file: pkg.module, format: "es" },
-    { file: pkg.module, format: "module", plugins: [terser()] },
+    { file: pkg.browser, format: "module", plugins: [terser()] },
   ],
   plugins: [
     del({ targets: ["dist/*"] }),
