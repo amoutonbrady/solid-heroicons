@@ -37,7 +37,7 @@
     "build:component": "rollup -c",
     "build:types": "tsc",
     "build": "yarn build:icons && yarn build:component && yarn build:types",
-    "prepublishOnly": "yarn build"
+    "prepack": "yarn build"
   },
   "keywords": [
     "icon",
