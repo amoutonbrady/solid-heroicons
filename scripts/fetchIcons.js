@@ -1,5 +1,5 @@
 import { join, parse } from "path";
-import { readdir, readFile, outputFile, remove } from "fs-extra";
+import { readdir, readFile, outputFile, remove, removeSync } from "fs-extra";
 import { camelCase } from "change-case";
 import dd from "dedent";
 import degit from "degit";
@@ -11,6 +11,8 @@ const OUTLINE_SRC = "tailwindlabs/heroicons/optimized/outline";
 const OUTLINE_DIST = join(TMP, "outline");
 
 async function main() {
+  removeSync(SOLID_DIST);
+  removeSync(OUTLINE_DIST);
   const [solidGit, outlineGit] = [SOLID_SRC, OUTLINE_SRC].map((repo) =>
     degit(repo, { cache: false, verbose: true, force: true })
   );
@@ -33,6 +35,7 @@ async function main() {
 async function generateIcons({ path, name, outline }) {
   const icons = await readdir(path);
   const exportedIcons = [];
+  const exportedIconsCjs = [];
   const exportedTypes = [];
 
   for (const icon of icons) {
@@ -48,28 +51,42 @@ async function generateIcons({ path, name, outline }) {
     const code = cleanedSVG.join(" ").replace(/\s{2,}/g, "");
     const iconPathsStr = dd`export const ${iconName} = { path: \`${code}\`, outline: ${outline} };`;
     const iconTypeStr = dd`export declare const ${iconName}: { path: string; outline: boolean; };`;
+    const iconPathsStrCjs = dd`module.exports.${iconName} = { path: \`${code}\`, outline: ${outline} };`;
     exportedIcons.push(iconPathsStr);
     exportedTypes.push(iconTypeStr);
+    exportedIconsCjs.push(iconPathsStrCjs);
   }
 
   const exportedIconsStr = exportedIcons.join("\n");
   const exportedTypesStr = exportedTypes.join("\n");
-  await outputFile(join(process.cwd(), name, "index.js"), exportedIconsStr, {
-    encoding: "utf-8",
-  });
+  const exportedIconsStrCjs = exportedIconsCjs.join("\n");
+  await outputFile(
+    join(process.cwd(), name, "index.esm.js"),
+    exportedIconsStr,
+    {
+      encoding: "utf-8",
+    }
+  );
   await outputFile(join(process.cwd(), name, "index.d.ts"), exportedTypesStr, {
     encoding: "utf-8",
   });
   await outputFile(
+    join(process.cwd(), name, "index.common.js"),
+    exportedIconsStrCjs,
+    {
+      encoding: "utf-8",
+    }
+  );
+  await outputFile(
     join(process.cwd(), name, "package.json"),
     dd`
-        {
-            "name": "@amoutonbrady/solid-heroicons/${name}",
-            "main": "index.js",
-            "module": "index.js",
-            "types": "index.d.ts",
-            "sideEffects": false
-        }`
+      {
+        "name": "@amoutonbrady/solid-heroicons/${name}",
+        "main": "./index.common.js",
+        "module": "./index.esm.js",
+        "types": "./index.d.ts",
+        "sideEffects": false
+      }`
   );
 }
 

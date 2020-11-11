@@ -1,6 +1,8 @@
-import { nodeResolve } from "@rollup/plugin-node-resolve";
 import { babel } from "@rollup/plugin-babel";
+import { terser } from "rollup-plugin-terser";
+import { nodeResolve } from "@rollup/plugin-node-resolve";
 import pkg from "./package.json";
+import del from "rollup-plugin-delete";
 
 /**
  * @type {import('rollup').RollupOptions}
@@ -10,8 +12,10 @@ const config = {
   output: [
     { file: pkg.main, format: "cjs" },
     { file: pkg.module, format: "es" },
+    { file: pkg.module, format: "module", plugins: [terser()] },
   ],
   plugins: [
+    del({ targets: ["dist/*"] }),
     nodeResolve({
       extensions: [".ts", ".tsx"],
     }),
