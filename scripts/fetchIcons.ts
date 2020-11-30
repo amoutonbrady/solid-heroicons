@@ -34,12 +34,12 @@ async function main() {
 
 async function generateIcons({ path, name, outline }) {
   const icons = await readdir(path);
-  const exportedIcons = [];
+  const exportedIcons: string[] = [];
   const exportedIconsCjs = [
     "'use strict;'",
     "Object.defineProperty(exports, '__esModule', { value: true });",
   ];
-  const exportedTypes = [];
+  const exportedTypes: string[] = [];
 
   for (const icon of icons) {
     const iconName = camelCase(parse(icon).name);
