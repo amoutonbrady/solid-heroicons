@@ -16,7 +16,7 @@ interface Props extends JSX.SvgSVGAttributes<SVGSVGElement> {
  * whether it's imported from `outline` or `solid`.
  *
  * @example
- * ```tsx"
+ * ```tsx
  * import { arrowLeft } from '@amoutonbrady/solid-heroicons/outline'
  * import { arrowRight } from '@amoutonbrady/solid-heroicons/solid'
  *
