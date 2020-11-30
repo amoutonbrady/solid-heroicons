@@ -1,6 +1,6 @@
 {
   "name": "@amoutonbrady/solid-heroicons",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Heroicons for Solid",
   "main": "./dist/icon.common.js",
   "module": "./dist/icon.esm.js",
@@ -56,7 +56,7 @@
   "homepage": "https://github.com/amoutonbrady/solid-heroicons#readme",
   "license": "ISC",
   "peerDependencies": {
-    "solid-js": "^0.21.6"
+    "solid-js": "^0.22.8"
   },
   "dependencies": {
     "solid-js": "^0.22.8"
