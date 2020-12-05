@@ -10,7 +10,8 @@
     "strict": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "jsxImportSource": "solid-js"
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist", "tests"]

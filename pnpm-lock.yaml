@@ -1,23 +1,23 @@
 dependencies:
-  solid-js: 0.22.8
+  solid-js: 0.23.0-beta.0
 devDependencies:
   '@babel/core': 7.12.9
   '@babel/preset-typescript': 7.12.7_@babel+core@7.12.9
   '@babel/types': 7.12.7
-  '@rollup/plugin-babel': 5.2.1_@babel+core@7.12.9+rollup@2.34.0
-  '@rollup/plugin-node-resolve': 10.0.0_rollup@2.34.0
+  '@rollup/plugin-babel': 5.2.2_@babel+core@7.12.9+rollup@2.34.1
+  '@rollup/plugin-node-resolve': 11.0.0_rollup@2.34.1
   '@types/dedent': 0.7.0
   '@types/degit': 2.8.0
   '@types/fs-extra': 9.0.4
-  babel-preset-solid: 0.22.7_@babel+core@7.12.9
-  change-case: 4.1.1
+  babel-preset-solid: 0.22.9_@babel+core@7.12.9
+  change-case: 4.1.2
   dedent: 0.7.0
   degit: 2.8.0
   fs-extra: 9.0.1
   jiti: 0.1.17
-  rollup: 2.34.0
+  rollup: 2.34.1
   rollup-plugin-delete: 2.0.0
-  rollup-plugin-terser: 7.0.2_rollup@2.34.0
+  rollup-plugin-terser: 7.0.2_rollup@2.34.1
   typescript: 4.1.2
 lockfileVersion: 5.2
 packages:
@@ -267,12 +267,12 @@ packages:
       node: '>= 8'
     resolution:
       integrity: sha512-1V9XOY4rDW0rehzbrcqAmHnz8e7SKvX27gh8Gt2WgB0+pdzdiLV83p72kZPU+jvMbS1qU5mauP2iOvO8rhmurQ==
-  /@rollup/plugin-babel/5.2.1_@babel+core@7.12.9+rollup@2.34.0:
+  /@rollup/plugin-babel/5.2.2_@babel+core@7.12.9+rollup@2.34.1:
     dependencies:
       '@babel/core': 7.12.9
       '@babel/helper-module-imports': 7.12.5
-      '@rollup/pluginutils': 3.1.0_rollup@2.34.0
-      rollup: 2.34.0
+      '@rollup/pluginutils': 3.1.0_rollup@2.34.1
+      rollup: 2.34.1
     dev: true
     engines:
       node: '>= 10.0.0'
@@ -284,29 +284,29 @@ packages:
       '@types/babel__core':
         optional: true
     resolution:
-      integrity: sha512-Jd7oqFR2dzZJ3NWANDyBjwTtX/lYbZpVcmkHrfQcpvawHs9E4c0nYk5U2mfZ6I/DZcIvy506KZJi54XK/jxH7A==
-  /@rollup/plugin-node-resolve/10.0.0_rollup@2.34.0:
+      integrity: sha512-MjmH7GvFT4TW8xFdIeFS3wqIX646y5tACdxkTO+khbHvS3ZcVJL6vkAHLw2wqPmkhwCfWHoNsp15VYNwW6JEJA==
+  /@rollup/plugin-node-resolve/11.0.0_rollup@2.34.1:
     dependencies:
-      '@rollup/pluginutils': 3.1.0_rollup@2.34.0
+      '@rollup/pluginutils': 3.1.0_rollup@2.34.1
       '@types/resolve': 1.17.1
       builtin-modules: 3.1.0
       deepmerge: 4.2.2
       is-module: 1.0.0
       resolve: 1.19.0
-      rollup: 2.34.0
+      rollup: 2.34.1
     dev: true
     engines:
       node: '>= 10.0.0'
     peerDependencies:
       rollup: ^1.20.0||^2.0.0
     resolution:
-      integrity: sha512-sNijGta8fqzwA1VwUEtTvWCx2E7qC70NMsDh4ZG13byAXYigBNZMxALhKUSycBks5gupJdq0lFrKumFrRZ8H3A==
-  /@rollup/pluginutils/3.1.0_rollup@2.34.0:
+      integrity: sha512-8Hrmwjn1pLYjUxcv7U7IPP0qfnzEJWHyHE6CaZ8jbLM+8axaarJRB1jB6JgKTDp5gNga+TpsgX6F8iuvgOerKQ==
+  /@rollup/pluginutils/3.1.0_rollup@2.34.1:
     dependencies:
       '@types/estree': 0.0.39
       estree-walker: 1.0.1
       picomatch: 2.2.2
-      rollup: 2.34.0
+      rollup: 2.34.1
     dev: true
     engines:
       node: '>= 8.0.0'
@@ -392,14 +392,14 @@ packages:
       '@babel/core': '*'
     resolution:
       integrity: sha512-fO/HmBMaRF8zlPTB1bFASRwqwpdaVMr2gnwGOT8z99lrpBNCnaJPhE/6LlgTG+6/GD6U+B6+pbUogwG2eRO72w==
-  /babel-preset-solid/0.22.7_@babel+core@7.12.9:
+  /babel-preset-solid/0.22.9_@babel+core@7.12.9:
     dependencies:
       babel-plugin-jsx-dom-expressions: 0.23.5_@babel+core@7.12.9
     dev: true
     peerDependencies:
       '@babel/core': '*'
     resolution:
-      integrity: sha512-MAIt+wJeI+xfEUHBe3V9o87+slvq4JMwEmNt7mrKN+XxvNg6hOpwo997Im2vR2N5vunYBat4YsWVfN5nQuRCpQ==
+      integrity: sha512-n+q/rUY7FZdtatVIOeGVmaZ+uP2nExVsItIXVuKDzmaGO3GUw+OJtpKrNGcUGHaYMxR+WNVJBMxeLPuPMl10tQ==
   /balanced-match/1.0.0:
     dev: true
     resolution:
@@ -429,21 +429,21 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-k0KL0aWZuBt2lrxrcASWDfwOLMnodeQjodT/1SxEQAXsHANgo6ZC/VEaSEHCXt7aSTZ4/4H5LKa+tBXmW7Vtvw==
-  /camel-case/4.1.1:
+  /camel-case/4.1.2:
     dependencies:
-      pascal-case: 3.1.1
-      tslib: 1.14.1
+      pascal-case: 3.1.2
+      tslib: 2.0.3
     dev: true
     resolution:
-      integrity: sha512-7fa2WcG4fYFkclIvEmxBbTvmibwF2/agfEBc6q3lOpVu0A13ltLsA+Hr/8Hp6kp5f+G7hKi6t8lys6XxP+1K6Q==
-  /capital-case/1.0.3:
+      integrity: sha512-gxGWBrTT1JuMx6R+o5PTXMmUnhnVzLQ9SNutD4YqKtI6ap897t3tKECYla6gCWEkplXnlNybEkZg9GEGxKFCgw==
+  /capital-case/1.0.4:
     dependencies:
-      no-case: 3.0.3
-      tslib: 1.14.1
-      upper-case-first: 2.0.1
+      no-case: 3.0.4
+      tslib: 2.0.3
+      upper-case-first: 2.0.2
     dev: true
     resolution:
-      integrity: sha512-OlUSJpUr7SY0uZFOxcwnDOU7/MpHlKTZx2mqnDYQFrDudXLFm0JJ9wr/l4csB+rh2Ug0OPuoSO53PqiZBqno9A==
+      integrity: sha512-ds37W8CytHgwnhGGTi88pcPyR15qoNkOpYwmMMfnWqqWgESapLqvDx6huFjQ5vqWSn2Z06173XNA7LtMOeUh1A==
   /chalk/2.4.2:
     dependencies:
       ansi-styles: 3.2.1
@@ -454,23 +454,23 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ==
-  /change-case/4.1.1:
+  /change-case/4.1.2:
     dependencies:
-      camel-case: 4.1.1
-      capital-case: 1.0.3
-      constant-case: 3.0.3
-      dot-case: 3.0.3
-      header-case: 2.0.3
-      no-case: 3.0.3
-      param-case: 3.0.3
-      pascal-case: 3.1.1
-      path-case: 3.0.3
-      sentence-case: 3.0.3
-      snake-case: 3.0.3
-      tslib: 1.14.1
+      camel-case: 4.1.2
+      capital-case: 1.0.4
+      constant-case: 3.0.4
+      dot-case: 3.0.4
+      header-case: 2.0.4
+      no-case: 3.0.4
+      param-case: 3.0.4
+      pascal-case: 3.1.2
+      path-case: 3.0.4
+      sentence-case: 3.0.4
+      snake-case: 3.0.4
+      tslib: 2.0.3
     dev: true
     resolution:
-      integrity: sha512-qRlUWn/hXnX1R1LBDF/RelJLiqNjKjUqlmuBVSEIyye8kq49CXqkZWKmi8XeUAdDXWFOcGLUMZ+aHn3Q5lzUXw==
+      integrity: sha512-bSxY2ws9OtviILG1EiY5K7NNxkqg/JnRnFxLtKQ96JaviiIxi7djMrSd0ECT9AC+lttClmYwKw53BWpOMblo7A==
   /clean-stack/2.2.0:
     dev: true
     engines:
@@ -495,14 +495,14 @@ packages:
     dev: true
     resolution:
       integrity: sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=
-  /constant-case/3.0.3:
+  /constant-case/3.0.4:
     dependencies:
-      no-case: 3.0.3
-      tslib: 1.14.1
-      upper-case: 2.0.1
+      no-case: 3.0.4
+      tslib: 2.0.3
+      upper-case: 2.0.2
     dev: true
     resolution:
-      integrity: sha512-FXtsSnnrFYpzDmvwDGQW+l8XK3GV1coLyBN0eBz16ZUzGaZcT2ANVCJmLeuw2GQgxKHQIe9e0w2dzkSfaRlUmA==
+      integrity: sha512-I2hSBi7Vvs7BEuJDr5dDHfzb/Ruj3FyvFyh7KLilAjNQw3Be+xgqUBA2W6scVEcL0hL1dwPRtIqEPVUCKkSsyQ==
   /convert-source-map/1.7.0:
     dependencies:
       safe-buffer: 5.1.2
@@ -562,13 +562,13 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-WkrWp9GR4KXfKGYzOLmTuGVi1UWFfws377n9cc55/tb6DuqyF6pcQ5AbiHEshaDpY9v6oaSr2XCDidGmMwdzIA==
-  /dot-case/3.0.3:
+  /dot-case/3.0.4:
     dependencies:
-      no-case: 3.0.3
-      tslib: 1.14.1
+      no-case: 3.0.4
+      tslib: 2.0.3
     dev: true
     resolution:
-      integrity: sha512-7hwEmg6RiSQfm/GwPL4AAWXKy3YNNZA3oFv2Pdiey0mwkRCPZ9x6SZbkLcn8Ma5PYeVokzoD4Twv2n7LKp5WeA==
+      integrity: sha512-Kv5nKlh6yRrdrGvxeJ2e5y2eRUpkUosIW4A2AS38zwSz27zu7ufDwQPi5Jhs3XAlGNetl3bmnGhQsMtkKJnj3w==
   /escape-string-regexp/1.0.5:
     dev: true
     engines:
@@ -704,13 +704,13 @@ packages:
       node: '>= 0.4.0'
     resolution:
       integrity: sha512-f2dvO0VU6Oej7RkWJGrehjbzMAjFp5/VKPp5tTpWIV4JHHZK1/BxbFRtf/siA2SWTe09caDmVtYYzWEIbBS4zw==
-  /header-case/2.0.3:
+  /header-case/2.0.4:
     dependencies:
-      capital-case: 1.0.3
-      tslib: 1.14.1
+      capital-case: 1.0.4
+      tslib: 2.0.3
     dev: true
     resolution:
-      integrity: sha512-LChe/V32mnUQnTwTxd3aAlNMk8ia9tjCDb/LjYtoMrdAPApxLB+azejUk5ERZIZdIqvinwv6BAUuFXH/tQPdZA==
+      integrity: sha512-H/vuk5TEEVZwrR0lp2zed9OCo1uAILMlx0JEMgC26rzyJJ3N1v6XkwHHXJQdR2doSjcGPM6OKPYoJgf0plJ11Q==
   /ignore/5.1.8:
     dev: true
     engines:
@@ -823,12 +823,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA==
-  /lower-case/2.0.1:
+  /lower-case/2.0.2:
     dependencies:
-      tslib: 1.14.1
+      tslib: 2.0.3
     dev: true
     resolution:
-      integrity: sha512-LiWgfDLLb1dwbFQZsSglpRj+1ctGnayXz3Uv0/WO8n558JycT5fg6zkNcnW0G68Nn0aEldTFeEfmjCfmqry/rQ==
+      integrity: sha512-7fm3l3NAF9WfN6W3JOmf5drwpVqX78JtoGJ3A6W0a6ZnldM41w2fV5D490psKFTpMds8TJse/eHLFFsNHHjHgg==
   /merge-stream/2.0.0:
     dev: true
     resolution:
@@ -862,13 +862,13 @@ packages:
     dev: true
     resolution:
       integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
-  /no-case/3.0.3:
+  /no-case/3.0.4:
     dependencies:
-      lower-case: 2.0.1
-      tslib: 1.14.1
+      lower-case: 2.0.2
+      tslib: 2.0.3
     dev: true
     resolution:
-      integrity: sha512-ehY/mVQCf9BL0gKfsJBvFJen+1V//U+0HQMPrWct40ixE4jnv0bfvxDbWtAHL9EcaPEOJHVVYKoQn1TlZUB8Tw==
+      integrity: sha512-fgAN3jGAh+RoxUGZHTSOLJIqUc2wmoBwGR4tbpNAKmmovFoWq0OdRkb0VkldReO2a2iBT/OEulG9XSUc10r3zg==
   /once/1.4.0:
     dependencies:
       wrappy: 1.0.2
@@ -883,27 +883,27 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-d3qXVTF/s+W+CdJ5A29wywV2n8CQQYahlgz2bFiA+4eVNJbHJodPZ+/gXwPGh0bOqA+j8S+6+ckmvLGPk1QpxQ==
-  /param-case/3.0.3:
+  /param-case/3.0.4:
     dependencies:
-      dot-case: 3.0.3
-      tslib: 1.14.1
+      dot-case: 3.0.4
+      tslib: 2.0.3
     dev: true
     resolution:
-      integrity: sha512-VWBVyimc1+QrzappRs7waeN2YmoZFCGXWASRYX1/rGHtXqEcrGEIDm+jqIwFa2fRXNgQEwrxaYuIrX0WcAguTA==
-  /pascal-case/3.1.1:
+      integrity: sha512-RXlj7zCYokReqWpOPH9oYivUzLYZ5vAPIfEmCTNViosC78F8F0H9y7T7gG2M39ymgutxF5gcFEsyZQSph9Bp3A==
+  /pascal-case/3.1.2:
     dependencies:
-      no-case: 3.0.3
-      tslib: 1.14.1
+      no-case: 3.0.4
+      tslib: 2.0.3
     dev: true
     resolution:
-      integrity: sha512-XIeHKqIrsquVTQL2crjq3NfJUxmdLasn3TYOU0VBM+UX2a6ztAWBlJQBePLGY7VHW8+2dRadeIPK5+KImwTxQA==
-  /path-case/3.0.3:
+      integrity: sha512-uWlGT3YSnK9x3BQJaOdcZwrnV6hPpd8jFH1/ucpiLRPh/2zCVJKS19E4GvYHvaCcACn3foXZ0cLB9Wrx1KGe5g==
+  /path-case/3.0.4:
     dependencies:
-      dot-case: 3.0.3
-      tslib: 1.14.1
+      dot-case: 3.0.4
+      tslib: 2.0.3
     dev: true
     resolution:
-      integrity: sha512-UMFU6UETFpCNWbIWNczshPrnK/7JAXBP2NYw80ojElbQ2+JYxdqWDBkvvqM93u4u6oLmuJ/tPOf2tM8KtXv4eg==
+      integrity: sha512-qO4qCFjXqVTrcbPt/hQfhTQ+VhFsqNKOPtytgNKkKxSoEp3XPUQ8ObFuePylOIok5gjn69ry8XiULxCwot3Wfg==
   /path-is-absolute/1.0.1:
     dev: true
     engines:
@@ -961,11 +961,11 @@ packages:
       node: '>=10'
     resolution:
       integrity: sha512-/VpLMtDy+8wwRlDANuYmDa9ss/knGsAgrDhM+tEwB1npHwNu4DYNmDfUL55csse/GHs9Q+SMT/rw9uiaZ3pnzA==
-  /rollup-plugin-terser/7.0.2_rollup@2.34.0:
+  /rollup-plugin-terser/7.0.2_rollup@2.34.1:
     dependencies:
       '@babel/code-frame': 7.10.4
       jest-worker: 26.6.2
-      rollup: 2.34.0
+      rollup: 2.34.1
       serialize-javascript: 4.0.0
       terser: 5.5.1
     dev: true
@@ -973,7 +973,7 @@ packages:
       rollup: ^2.0.0
     resolution:
       integrity: sha512-w3iIaU4OxcF52UUXiZNsNeuXIMDvFrr+ZXK6bFZ0Q60qyVfq4uLptoS4bbq3paG3x216eQllFZX7zt6TIImguQ==
-  /rollup/2.34.0:
+  /rollup/2.34.1:
     dev: true
     engines:
       node: '>=10.0.0'
@@ -981,7 +981,7 @@ packages:
     optionalDependencies:
       fsevents: 2.1.3
     resolution:
-      integrity: sha512-dW5iLvttZzdVehjEuNJ1bWvuMEJjOWGmnuFS82WeKHTGXDkRHQeq/ExdifkSyJv9dLcR86ysKRmrIDyR6O0X8g==
+      integrity: sha512-tGveB6NU5x4MS/iXaIsjfUkEv4hxzJJ4o0FRy5LO62Ndx3R2cmE1qsLYlSfRkvHUUPqWiFoxEm8pRftzh1a5HA==
   /run-parallel/1.1.10:
     dev: true
     resolution:
@@ -999,14 +999,14 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-sauaDf/PZdVgrLTNYHRtpXa1iRiKcaebiKQ1BJdpQlWH2lCvexQdX55snPFyK7QzpudqbCI0qXFfOasHdyNDGQ==
-  /sentence-case/3.0.3:
+  /sentence-case/3.0.4:
     dependencies:
-      no-case: 3.0.3
-      tslib: 1.14.1
-      upper-case-first: 2.0.1
+      no-case: 3.0.4
+      tslib: 2.0.3
+      upper-case-first: 2.0.2
     dev: true
     resolution:
-      integrity: sha512-ZPr4dgTcNkEfcGOMFQyDdJrTU9uQO1nb1cjf+nuzb6FxgMDgKddZOM29qEsB7jvsZSMruLRcL2KfM4ypKpa0LA==
+      integrity: sha512-8LS0JInaQMCRoQ7YUytAo/xUu5W2XnQxV2HI/6uM6U7CITS1RqPElr30V6uIqyMKM9lJGRVFy5/4CuzcixNYSg==
   /serialize-javascript/4.0.0:
     dependencies:
       randombytes: 2.1.0
@@ -1019,17 +1019,17 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==
-  /snake-case/3.0.3:
+  /snake-case/3.0.4:
     dependencies:
-      dot-case: 3.0.3
-      tslib: 1.14.1
+      dot-case: 3.0.4
+      tslib: 2.0.3
     dev: true
     resolution:
-      integrity: sha512-WM1sIXEO+rsAHBKjGf/6R1HBBcgbncKS08d2Aqec/mrDSpU80SiOU41hO7ny6DToHSyrlwTYzQBIK1FPSx4Y3Q==
-  /solid-js/0.22.8:
+      integrity: sha512-LAOh4z89bGQvl9pFfNF8V146i7o7/CqFPbqzYgP+yYzDIDeS9HaNFtXABamRW+AQzEVODcvE79ljJ+8a9YSdMg==
+  /solid-js/0.23.0-beta.0:
     dev: false
     resolution:
-      integrity: sha512-/htwxsPH2Chay4eRPX/zX7r9eiUIKsOcGAXNm7p9ZfsIXnssm8pTXKtWzQolkcPxKOF1W0jJfnjgjtFSb+DpGA==
+      integrity: sha512-EzUJN78hfzmflYzt1u9pdKnnecYdgkVJtxb5Qwx63wUlDooMgPOZCTBL8La8mFPT2HU642TFDPD2nlo38fWp1g==
   /source-map-support/0.5.19:
     dependencies:
       buffer-from: 1.1.1
@@ -1096,10 +1096,10 @@ packages:
       node: '>=8.0'
     resolution:
       integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==
-  /tslib/1.14.1:
+  /tslib/2.0.3:
     dev: true
     resolution:
-      integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
+      integrity: sha512-uZtkfKblCEQtZKBF6EBXVZeQNl82yqtDQdv+eck8u7tdPxjLu2/lp5/uPW+um2tpuxINHWy3GhiccY7QgEaVHQ==
   /typescript/4.1.2:
     dev: true
     engines:
@@ -1119,18 +1119,18 @@ packages:
       node: '>= 10.0.0'
     resolution:
       integrity: sha512-hAZsKq7Yy11Zu1DE0OzWjw7nnLZmJZYTDZZyEFHZdUhV8FkH5MCfoU1XMaxXovpyW5nq5scPqq0ZDP9Zyl04oQ==
-  /upper-case-first/2.0.1:
+  /upper-case-first/2.0.2:
     dependencies:
-      tslib: 1.14.1
+      tslib: 2.0.3
     dev: true
     resolution:
-      integrity: sha512-105J8XqQ+9RxW3l9gHZtgve5oaiR9TIwvmZAMAIZWRHe00T21cdvewKORTlOJf/zXW6VukuTshM+HXZNWz7N5w==
-  /upper-case/2.0.1:
+      integrity: sha512-514ppYHBaKwfJRK/pNC6c/OxfGa0obSnAl106u97Ed0I625Nin96KAjttZF6ZL3e1XLtphxnqrOi9iWgm+u+bg==
+  /upper-case/2.0.2:
     dependencies:
-      tslib: 1.14.1
+      tslib: 2.0.3
     dev: true
     resolution:
-      integrity: sha512-laAsbea9SY5osxrv7S99vH9xAaJKrw5Qpdh4ENRLcaxipjKsiaBwiAsxfa8X5mObKNTQPsupSq0J/VIxsSJe3A==
+      integrity: sha512-KgdgDGJt2TpuwBUIjgG6lzw2GWFRCW9Qkfkiv0DxqHHLYJHmtmdUIKcZd8rHgFSjopVTlw6ggzCm1b8MFQwikg==
   /wrappy/1.0.2:
     dev: true
     resolution:
@@ -1139,19 +1139,19 @@ specifiers:
   '@babel/core': ^7.12.3
   '@babel/preset-typescript': ^7.12.1
   '@babel/types': ^7.12.6
-  '@rollup/plugin-babel': ^5.2.1
-  '@rollup/plugin-node-resolve': ^10.0.0
+  '@rollup/plugin-babel': ^5.2.2
+  '@rollup/plugin-node-resolve': ^11.0.0
   '@types/dedent': ^0.7.0
   '@types/degit': ^2.8.0
   '@types/fs-extra': ^9.0.4
-  babel-preset-solid: ^0.22.7
-  change-case: ^4.1.1
+  babel-preset-solid: ^0.22.9
+  change-case: ^4.1.2
   dedent: ^0.7.0
   degit: ^2.8.0
   fs-extra: ^9.0.1
   jiti: ^0.1.17
-  rollup: ^2.33.1
+  rollup: ^2.34.1
   rollup-plugin-delete: ^2.0.0
   rollup-plugin-terser: ^7.0.2
-  solid-js: ^0.22.8
+  solid-js: 0.23.0-beta.0
   typescript: ^4.0.5
