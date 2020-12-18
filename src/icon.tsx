@@ -1,4 +1,6 @@
-import { Component, JSX, splitProps } from "solid-js";
+import type { Component, JSX } from "solid-js";
+
+import { splitProps } from "solid-js";
 
 interface Props extends JSX.SvgSVGAttributes<SVGSVGElement> {
   /**
