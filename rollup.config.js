@@ -1,8 +1,8 @@
-import { babel } from "@rollup/plugin-babel";
-import { terser } from "rollup-plugin-terser";
-import { nodeResolve } from "@rollup/plugin-node-resolve";
-import pkg from "./package.json";
 import del from "rollup-plugin-delete";
+import { babel } from "@rollup/plugin-babel";
+import { nodeResolve } from "@rollup/plugin-node-resolve";
+
+const extensions = [".ts", ".tsx", ".js"];
 
 /**
  * @type {import('rollup').RollupOptions}
@@ -10,22 +10,19 @@ import del from "rollup-plugin-delete";
 const config = {
   input: "src/icon.tsx",
   output: [
-    { file: pkg.main, format: "cjs" },
-    { file: pkg.module, format: "es" },
-    { file: pkg.browser, format: "module", plugins: [terser()] },
+    { dir: "dist/cjs", format: "cjs", sourcemap: true },
+    { dir: "dist/esm", format: "esm", sourcemap: true },
   ],
   plugins: [
     del({ targets: ["dist/*"] }),
-    nodeResolve({
-      extensions: [".ts", ".tsx"],
-    }),
+    nodeResolve({ extensions, browser: true }),
     babel({
       babelHelpers: "bundled",
-      extensions: [".ts", ".tsx"],
+      extensions,
       presets: ["@babel/preset-typescript", "babel-preset-solid"],
     }),
   ],
-  external: ["solid-js", "solid-js/dom"],
+  external: ["solid-js", "solid-js/web"],
 };
 
 export default config;

@@ -1,18 +1,19 @@
 {
   "compilerOptions": {
-    "outDir": "dist",
-    "module": "ESNext",
     "target": "ESNext",
-    "moduleResolution": "node",
-    "jsx": "preserve",
-    "declaration": true,
-    "emitDeclarationOnly": true,
-    "strict": true,
+    "module": "ESNext",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "isolatedModules": true,
+    "declaration": true,
+    "moduleResolution": "node",
+    "declarationDir": "./dist/types",
+    "jsx": "preserve",
+    "resolveJsonModule": true,
+    "newLine": "lf",
+    "outDir": "./dist/source",
+    "sourceMap": true,
     "jsxImportSource": "solid-js"
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist", "tests"]
+  "include": ["./src"],
+  "exclude": ["node_modules/"]
 }
