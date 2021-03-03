@@ -10,8 +10,8 @@ const extensions = [".ts", ".tsx", ".js"];
 const config = {
   input: "src/icon.tsx",
   output: [
-    { dir: "dist/cjs", format: "cjs", sourcemap: true },
-    { dir: "dist/esm", format: "esm", sourcemap: true },
+    { dir: "dist/cjs", format: "cjs" },
+    { dir: "dist/esm", format: "esm" },
   ],
   plugins: [
     del({ targets: ["dist/*"] }),
