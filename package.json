@@ -64,7 +64,7 @@
     "solid-js": "^0.24"
   },
   "dependencies": {
-    "solid-js": "0.24.7"
+    "solid-js": "0.24.12"
   },
   "devDependencies": {
     "@babel/core": "^7.13.8",
@@ -74,13 +74,13 @@
     "@rollup/plugin-node-resolve": "^11.2.0",
     "@types/dedent": "^0.7.0",
     "@types/degit": "^2.8.1",
-    "@types/fs-extra": "^9.0.7",
-    "babel-preset-solid": "^0.24.8",
+    "@types/fs-extra": "^9.0.8",
+    "babel-preset-solid": "^0.24.12",
     "change-case": "^4.1.2",
     "dedent": "^0.7.0",
     "degit": "^2.8.0",
     "fs-extra": "^9.1.0",
-    "jiti": "^1.3.0",
+    "jiti": "^1.6.0",
     "rollup": "^2.40.0",
     "rollup-plugin-delete": "^2.0.0",
     "typescript": "^4.2.2"
