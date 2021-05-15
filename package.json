@@ -3,30 +3,20 @@
   "version": "0.7.0",
   "description": "Heroicons for Solid",
   "sideEffects": false,
-  "solid": "./dist/source/icon.jsx",
-  "main": "dist/cjs/icon.js",
+	"type": "module",
+  "main": "dist/esm/icon.js",
   "module": "dist/esm/icon.js",
-  "browser": "dist/esm/icon.js",
   "types": "dist/types/icon.d.ts",
   "exports": {
     ".": {
       "solid": "./dist/source/icon.jsx",
-      "import": "./dist/esm/icon.js",
-      "browser": "./dist/esm/icon.js",
-      "require": "./dist/cjs/icon.js",
-      "node": "./dist/cjs/icon.js"
+      "default": "./dist/esm/icon.js"
     },
     "./outline": {
-      "import": "./outline/index.esm.js",
-      "browser": "./outline/index.esm.js",
-      "require": "./outline/index.common.js",
-      "node": "./outline/index.common.js"
+      "default": "./outline/index.js"
     },
     "./solid": {
-      "import": "./solid/index.esm.js",
-      "browser": "./solid/index.esm.js",
-      "require": "./solid/index.common.js",
-      "node": "./solid/index.common.js"
+      "default": "./solid/index.js"
     }
   },
   "publishConfig": {
@@ -40,8 +30,7 @@
   "scripts": {
     "build:icons": "jiti scripts/fetchIcons",
     "build:component": "rollup -c",
-    "build:types": "tsc",
-    "build": "pnpm build:icons && pnpm build:component && pnpm build:types",
+    "build": "pnpm build:icons && pnpm build:component",
     "prepublishOnly": "pnpm build"
   },
   "keywords": [
@@ -59,30 +48,24 @@
     "url": "https://github.com/amoutonbrady/solid-heroicons/issues"
   },
   "homepage": "https://github.com/amoutonbrady/solid-heroicons#readme",
-  "license": "ISC",
+  "license": "MIT",
   "peerDependencies": {
-    "solid-js": "^0.24"
+    "solid-js": "^0.26"
   },
   "dependencies": {
-    "solid-js": "0.24.12"
+    "solid-js": "0.26.5"
   },
   "devDependencies": {
-    "@babel/core": "^7.13.8",
-    "@babel/preset-typescript": "^7.13.0",
-    "@babel/types": "^7.13.0",
-    "@rollup/plugin-babel": "^5.3.0",
-    "@rollup/plugin-node-resolve": "^11.2.0",
     "@types/dedent": "^0.7.0",
-    "@types/degit": "^2.8.1",
-    "@types/fs-extra": "^9.0.8",
-    "babel-preset-solid": "^0.24.12",
+    "@types/degit": "^2.8.2",
+    "@types/fs-extra": "^9.0.11",
     "change-case": "^4.1.2",
     "dedent": "^0.7.0",
-    "degit": "^2.8.0",
-    "fs-extra": "^9.1.0",
-    "jiti": "^1.6.0",
-    "rollup": "^2.40.0",
-    "rollup-plugin-delete": "^2.0.0",
-    "typescript": "^4.2.2"
+    "degit": "^2.8.4",
+    "fs-extra": "^10.0.0",
+    "jiti": "^1.9.2",
+    "rollup": "^2.48.0",
+    "rollup-preset-solid": "^0.3.0",
+    "typescript": "^4.2.4"
   }
 }
