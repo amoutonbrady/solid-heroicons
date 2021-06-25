@@ -24,8 +24,8 @@ By default the `stroke` | `fill` attribute of the SVG is set to `currentColor` w
 ```tsx
 import { render } from 'solid-js/dom'
 import { Icon } from '@amoutonbrady/solid-heroicons';
-import { arrowLeft } from '@amoutonbrady/solid-heroicons/solid;
-import { arrowRight } from '@amoutonbrady/solid-heroicons/outline;
+import { arrowLeft } from '@amoutonbrady/solid-heroicons/solid';
+import { arrowRight } from '@amoutonbrady/solid-heroicons/outline';
 
 const App = () => <>
     <Icon path={arrowLeft} />
