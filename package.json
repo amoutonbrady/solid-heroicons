@@ -50,10 +50,10 @@
   "homepage": "https://github.com/amoutonbrady/solid-heroicons#readme",
   "license": "MIT",
   "peerDependencies": {
-    "solid-js": ">= 0.26"
+    "solid-js": ">= ^1.2.5"
   },
   "dependencies": {
-    "solid-js": "^1.1.5"
+    "solid-js": "^1.2.5"
   },
   "devDependencies": {
     "@types/dedent": "^0.7.0",
