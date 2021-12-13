@@ -29,7 +29,7 @@ export const Icon: Component<Props> = (props) => {
 
   return (
     <svg
-      viewBox="0 0 24 24"
+      viewBox={internal.path.outline ? "0 0 24 24" : "0 0 20 20"}
       style={{
         fill: internal.path.outline ? "none" : "currentColor",
         stroke: internal.path.outline ? "currentColor" : "none",
