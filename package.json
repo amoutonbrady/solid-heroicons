@@ -9,7 +9,7 @@
   "types": "dist/browser/icon.d.ts",
   "exports": {
     ".": {
-      "solid": "./dist/source/icon.jsx",
+      "solid": "./dist/browser/icon.jsx",
       "node": "./dist/server/index.module.js",
       "default": "./dist/browser/index.module.js"
     },
