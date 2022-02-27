@@ -1,6 +1,6 @@
 {
   "name": "solid-heroicons",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Heroicons for Solid",
   "sideEffects": false,
   "type": "module",
