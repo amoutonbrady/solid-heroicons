@@ -4,13 +4,14 @@
   "description": "Heroicons for Solid",
   "sideEffects": false,
   "type": "module",
-  "main": "dist/esm/icon.js",
-  "module": "dist/esm/icon.js",
-  "types": "dist/types/icon.d.ts",
+  "main": "dist/browser/index.module.js",
+  "module": "dist/browser/index.module.js",
+  "types": "dist/browser/icon.d.ts",
   "exports": {
     ".": {
       "solid": "./dist/source/icon.jsx",
-      "default": "./dist/esm/icon.js"
+      "node": "./dist/server/index.module.js",
+      "default": "./dist/browser/index.module.js"
     },
     "./outline": {
       "default": "./outline/index.js"
@@ -53,21 +54,21 @@
     "solid-js": ">= ^1.2.5"
   },
   "dependencies": {
-    "solid-js": "^1.3.1"
+    "solid-js": "^1.3.9"
   },
   "devDependencies": {
-    "@babel/core": "^7.16.7",
+    "@babel/core": "^7.17.5",
     "@types/dedent": "^0.7.0",
     "@types/degit": "^2.8.3",
     "@types/fs-extra": "^9.0.13",
-    "babel-preset-solid": "^1.3.1",
+    "babel-preset-solid": "^1.3.6",
     "change-case": "^4.1.2",
     "dedent": "^0.7.0",
     "degit": "^2.8.4",
-    "fs-extra": "^10.0.0",
-    "jiti": "^1.12.9",
-    "rollup": "^2.63.0",
-    "rollup-preset-solid": "^1.0.1",
-    "typescript": "^4.5.4"
+    "fs-extra": "^10.0.1",
+    "jiti": "^1.13.0",
+    "rollup": "^2.68.0",
+    "rollup-preset-solid": "^1.4.0",
+    "typescript": "^4.5.5"
   }
 }
