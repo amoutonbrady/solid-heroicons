@@ -4,7 +4,7 @@ interface Props extends JSX.SvgSVGAttributes<SVGSVGElement> {
   /**
    * This is the path of the SVG
    */
-  path: { path: string; outline: boolean };
+  path: { path: Element | Element[] | string; outline: boolean };
 }
 
 /**
