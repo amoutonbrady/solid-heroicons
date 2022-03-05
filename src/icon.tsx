@@ -35,7 +35,8 @@ export const Icon: Component<Props> = (props) => {
         stroke: internal.path.outline ? "currentColor" : "none",
       }}
       {...external}
-      innerHTML={internal.path.path}
-    />
+    >
+      {internal.path.path}
+    </svg>
   );
 };
