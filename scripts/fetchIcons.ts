@@ -70,8 +70,8 @@ async function generateIcons({ path, name, outline }) {
     cleanedSVG.pop();
 
     const code = cleanedSVG.join(" ").replace(/\s{2,}/g, "");
-    const iconPathsStr = dd`export const ${iconName} = { path: <>${code}</>, outline: ${outline} };`;
-    const iconTypeStr = dd`export declare const ${iconName}: { path: Element | Element[] | string; outline: boolean; };`;
+    const iconPathsStr = dd`export const ${iconName} = { path: () => <>${code}</>, outline: ${outline} };`;
+    const iconTypeStr = dd`export declare const ${iconName}: { path: () => Element | Element[] | string; outline: boolean; };`;
     exportedIcons.push(iconPathsStr);
     exportedTypes.push(iconTypeStr);
   }
