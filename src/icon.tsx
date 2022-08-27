@@ -4,7 +4,11 @@ interface Props extends JSX.SvgSVGAttributes<SVGSVGElement> {
   /**
    * This is the path of the SVG
    */
-  path: { path: Element | Element[] | string; outline: boolean };
+  path: {
+    path: Element | Element[] | string;
+    outline?: boolean;
+    mini?: boolean;
+  };
 }
 
 /**
@@ -29,7 +33,7 @@ export const Icon: Component<Props> = (props) => {
 
   return (
     <svg
-      viewBox={internal.path.outline ? "0 0 24 24" : "0 0 20 20"}
+      viewBox={internal.path.mini ? "0 0 20 20" : "0 0 24 24"}
       style={{
         fill: internal.path.outline ? "none" : "currentColor",
         stroke: internal.path.outline ? "currentColor" : "none",

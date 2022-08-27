@@ -11,11 +11,14 @@ import pkg from "../package.json";
 
 const TMP = join(process.cwd(), "tmp");
 
-const SOLID_SRC = "tailwindlabs/heroicons/optimized/solid";
-const SOLID_DIST = join(TMP, "solid");
+const SOLID_SRC = "tailwindlabs/heroicons/optimized/24/solid";
+const SOLID_DIST = join(TMP, "solid/24");
 
-const OUTLINE_SRC = "tailwindlabs/heroicons/optimized/outline";
-const OUTLINE_DIST = join(TMP, "outline");
+const SOLID_MINI_SRC = "tailwindlabs/heroicons/optimized/20/solid";
+const SOLID_MINI_DIST = join(TMP, "solid/20");
+
+const OUTLINE_SRC = "tailwindlabs/heroicons/optimized/24/outline";
+const OUTLINE_DIST = join(TMP, "outline/24");
 
 // Start the whole machinery
 main().catch((e) => {
@@ -26,14 +29,18 @@ main().catch((e) => {
 async function main() {
   // Remove previous artifact
   removeSync(SOLID_DIST);
+  removeSync(SOLID_MINI_DIST);
   removeSync(OUTLINE_DIST);
 
   // Clone the original SVG icons from the repo.
-  const [solidGit, outlineGit] = [SOLID_SRC, OUTLINE_SRC].map((repo) =>
-    degit(repo, { cache: false, verbose: true, force: true })
-  );
+  const [solidGit, solidMiniGit, outlineGit] = [
+    SOLID_SRC,
+    SOLID_MINI_SRC,
+    OUTLINE_SRC,
+  ].map((repo) => degit(repo, { cache: false, verbose: true, force: true }));
 
   await solidGit.clone(SOLID_DIST);
+  await solidMiniGit.clone(SOLID_MINI_DIST);
   await outlineGit.clone(OUTLINE_DIST);
 
   // Generate the icons in the proper folder
@@ -41,18 +48,26 @@ async function main() {
     path: SOLID_DIST,
     name: "solid",
     outline: false,
+    mini: false,
+  });
+  await generateIcons({
+    path: SOLID_MINI_DIST,
+    name: "solid-mini",
+    outline: false,
+    mini: true,
   });
   await generateIcons({
     path: OUTLINE_DIST,
     name: "outline",
     outline: true,
+    mini: false,
   });
 
   // Remove temporary git clones folder
   await remove(TMP);
 }
 
-async function generateIcons({ path, name, outline }) {
+async function generateIcons({ path, name, outline, mini }) {
   const icons = await readdir(path);
   const exportedIcons: string[] = [];
   const exportedTypes: string[] = [];
@@ -70,8 +85,8 @@ async function generateIcons({ path, name, outline }) {
     cleanedSVG.pop();
 
     const code = cleanedSVG.join(" ").replace(/\s{2,}/g, "");
-    const iconPathsStr = dd`export const ${iconName} = { path: () => <>${code}</>, outline: ${outline} };`;
-    const iconTypeStr = dd`export declare const ${iconName}: { path: () => Element | Element[] | string; outline: boolean; };`;
+    const iconPathsStr = dd`export const ${iconName} = { path: () => <>${code}</>, outline: ${outline}, mini: ${mini} };`;
+    const iconTypeStr = dd`export declare const ${iconName}: { path: () => Element | Element[] | string; outline: boolean; mini: boolean; };`;
     exportedIcons.push(iconPathsStr);
     exportedTypes.push(iconTypeStr);
   }
