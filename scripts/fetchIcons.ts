@@ -70,7 +70,7 @@ async function main() {
 async function generateIcons({ path, name, outline, mini }) {
   const icons = await readdir(path);
   const exportedIcons: string[] = [];
-  const exportedTypes: string[] = [];
+  const exportedTypes: string[] = ['import { JSX } from "solid-js";', ""];
 
   for (const icon of icons) {
     const iconName = camelCase(parse(icon).name);
@@ -86,7 +86,7 @@ async function generateIcons({ path, name, outline, mini }) {
 
     const code = cleanedSVG.join(" ").replace(/\s{2,}/g, "");
     const iconPathsStr = dd`export const ${iconName} = { path: () => <>${code}</>, outline: ${outline}, mini: ${mini} };`;
-    const iconTypeStr = dd`export declare const ${iconName}: { path: () => Element | Element[] | string; outline: boolean; mini: boolean; };`;
+    const iconTypeStr = dd`export declare const ${iconName}: { path: JSX.Element; outline: boolean; mini: boolean; };`;
     exportedIcons.push(iconPathsStr);
     exportedTypes.push(iconTypeStr);
   }
