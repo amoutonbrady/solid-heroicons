@@ -68,8 +68,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.2",
-    "@rollup/plugin-babel": "^5.3.1",
-    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-node-resolve": "^15.0.1",
     "@types/dedent": "^0.7.0",
     "@types/degit": "^2.8.3",
     "@types/fs-extra": "^9.0.13",
@@ -79,8 +79,8 @@
     "degit": "^2.8.4",
     "fs-extra": "^10.1.0",
     "jiti": "^1.16.0",
-    "rollup": "^2.78.1",
-    "rollup-preset-solid": "^1.4.0",
-    "typescript": "^4.8.4"
+    "rollup": "^3.4.0",
+    "rollup-preset-solid": "^2.0.0",
+    "typescript": "^4.9.3"
   }
 }
