@@ -1,6 +1,6 @@
 {
   "name": "solid-heroicons",
-  "version": "3.2.0",
+  "version": "3.2.1",
   "description": "Heroicons for Solid",
   "sideEffects": false,
   "type": "module",
@@ -9,28 +9,28 @@
   "types": "dist/browser/icon.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/browser/icon.d.ts",
       "solid": "./dist/browser/icon.jsx",
       "node": "./dist/server/index.module.js",
-      "default": "./dist/browser/index.module.js",
-      "types": "./dist/browser/icon.d.ts"
+      "default": "./dist/browser/index.module.js"
     },
     "./outline": {
+      "types": "./dist/outline/icon.d.ts",
       "solid": "./outline/index.jsx",
       "node": "./outline/server/index.js",
-      "default": "./outline/browser/index.js",
-      "types": "./dist/outline/icon.d.ts"
+      "default": "./outline/browser/index.js"
     },
     "./solid": {
+      "types": "./dist/solid/icon.d.ts",
       "solid": "./solid/index.jsx",
       "node": "./solid/server/index.js",
-      "default": "./solid/browser/index.js",
-      "types": "./dist/solid/icon.d.ts"
+      "default": "./solid/browser/index.js"
     },
     "./solid-mini": {
+      "types": "./dist/solid-mini/icon.d.ts",
       "solid": "./solid-mini/index.jsx",
       "node": "./solid-mini/server/index.js",
-      "default": "./solid-mini/browser/index.js",
-      "types": "./dist/solid-mini/icon.d.ts"
+      "default": "./solid-mini/browser/index.js"
     }
   },
   "publishConfig": {
