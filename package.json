@@ -1,6 +1,6 @@
 {
   "name": "solid-heroicons",
-  "version": "3.2.1",
+  "version": "3.2.2",
   "description": "Heroicons for Solid",
   "sideEffects": false,
   "type": "module",
@@ -15,19 +15,19 @@
       "default": "./dist/browser/index.module.js"
     },
     "./outline": {
-      "types": "./dist/outline/icon.d.ts",
+      "types": "./outline/icon.d.ts",
       "solid": "./outline/index.jsx",
       "node": "./outline/server/index.js",
       "default": "./outline/browser/index.js"
     },
     "./solid": {
-      "types": "./dist/solid/icon.d.ts",
+      "types": "./solid/icon.d.ts",
       "solid": "./solid/index.jsx",
       "node": "./solid/server/index.js",
       "default": "./solid/browser/index.js"
     },
     "./solid-mini": {
-      "types": "./dist/solid-mini/icon.d.ts",
+      "types": "./solid-mini/icon.d.ts",
       "solid": "./solid-mini/index.jsx",
       "node": "./solid-mini/server/index.js",
       "default": "./solid-mini/browser/index.js"
