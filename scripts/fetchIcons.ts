@@ -116,6 +116,7 @@ async function generateIcons({ path, name, outline, mini }) {
 				},
 				"exports": {
 					".": {
+            "types": "./index.d.ts",
 						"solid": "./index.jsx",
 					  "node": "./server/index.js",
 					  "default": "./browser/index.js"
