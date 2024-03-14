@@ -17,6 +17,9 @@ const SOLID_DIST = join(TMP, "solid/24");
 const SOLID_MINI_SRC = "tailwindlabs/heroicons/optimized/20/solid";
 const SOLID_MINI_DIST = join(TMP, "solid/20");
 
+const SOLID_MICRO_SRC = "tailwindlabs/heroicons/optimized/16/solid";
+const SOLID_MICRO_DIST = join(TMP, "solid/16");
+
 const OUTLINE_SRC = "tailwindlabs/heroicons/optimized/24/outline";
 const OUTLINE_DIST = join(TMP, "outline/24");
 
@@ -30,17 +33,20 @@ async function main() {
   // Remove previous artifact
   removeSync(SOLID_DIST);
   removeSync(SOLID_MINI_DIST);
+  removeSync(SOLID_MICRO_DIST);
   removeSync(OUTLINE_DIST);
 
   // Clone the original SVG icons from the repo.
-  const [solidGit, solidMiniGit, outlineGit] = [
+  const [solidGit, solidMiniGit, solidMicroGit, outlineGit] = [
     SOLID_SRC,
     SOLID_MINI_SRC,
+    SOLID_MICRO_SRC,
     OUTLINE_SRC,
   ].map((repo) => degit(repo, { cache: false, verbose: true, force: true }));
 
   await solidGit.clone(SOLID_DIST);
   await solidMiniGit.clone(SOLID_MINI_DIST);
+  await solidMicroGit.clone(SOLID_MICRO_DIST);
   await outlineGit.clone(OUTLINE_DIST);
 
   // Generate the icons in the proper folder
@@ -49,25 +55,35 @@ async function main() {
     name: "solid",
     outline: false,
     mini: false,
+    micro: false,
   });
   await generateIcons({
     path: SOLID_MINI_DIST,
     name: "solid-mini",
     outline: false,
     mini: true,
+    micro: false,
+  });
+  await generateIcons({
+    path: SOLID_MICRO_DIST,
+    name: "solid-micro",
+    outline: false,
+    mini: false,
+    micro: true,
   });
   await generateIcons({
     path: OUTLINE_DIST,
     name: "outline",
     outline: true,
     mini: false,
+    micro: false,
   });
 
   // Remove temporary git clones folder
   await remove(TMP);
 }
 
-async function generateIcons({ path, name, outline, mini }) {
+async function generateIcons({ path, name, outline, mini, micro }) {
   const icons = await readdir(path);
   const exportedIcons: string[] = [];
   const exportedTypes: string[] = ['import { JSX } from "solid-js";', ""];
@@ -85,8 +101,8 @@ async function generateIcons({ path, name, outline, mini }) {
     cleanedSVG.pop();
 
     const code = cleanedSVG.join(" ").replace(/\s{2,}/g, "");
-    const iconPathsStr = dd`export const ${iconName} = { path: () => <>${code}</>, outline: ${outline}, mini: ${mini} };`;
-    const iconTypeStr = dd`export declare const ${iconName}: { path: JSX.Element; outline: boolean; mini: boolean; };`;
+    const iconPathsStr = dd`export const ${iconName} = { path: () => <>${code}</>, outline: ${outline}, mini: ${mini}, micro: ${micro} };`;
+    const iconTypeStr = dd`export declare const ${iconName}: { path: JSX.Element; outline: boolean; mini: boolean; micro: boolean; };`;
     exportedIcons.push(iconPathsStr);
     exportedTypes.push(iconTypeStr);
   }

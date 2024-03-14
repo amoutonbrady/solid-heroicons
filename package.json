@@ -31,6 +31,12 @@
       "solid": "./solid-mini/index.jsx",
       "node": "./solid-mini/server/index.js",
       "default": "./solid-mini/browser/index.js"
+    },
+    "./solid-micro": {
+      "types": "./solid-micro/index.d.ts",
+      "solid": "./solid-micro/index.jsx",
+      "node": "./solid-micro/server/index.js",
+      "default": "./solid-micro/browser/index.js"
     }
   },
   "publishConfig": {
@@ -40,7 +46,8 @@
     "dist",
     "outline",
     "solid",
-    "solid-mini"
+    "solid-mini",
+    "solid-micro"
   ],
   "scripts": {
     "build:icons": "jiti scripts/fetchIcons",

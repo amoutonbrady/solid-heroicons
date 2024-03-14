@@ -16,7 +16,7 @@ $ pnpm add solid-heroicons
 
 ## Usage
 
-You can import every icon from heroicons [solid](https://github.com/tailwindlabs/heroicons/tree/master/24/solid), [outline](https://github.com/tailwindlabs/heroicons/tree/master/24/outline), or [solid-mini](https://github.com/tailwindlabs/heroicons/tree/master/20/solid) from `solid-heroicons/solid`, `solid-heroicons/outline` and `solid-heroicons/solid-mini` respectively. 
+You can import every icon from heroicons [solid](https://github.com/tailwindlabs/heroicons/tree/master/src/24/solid), [outline](https://github.com/tailwindlabs/heroicons/tree/master/src/24/outline), [solid-mini](https://github.com/tailwindlabs/heroicons/tree/master/src/20/solid), or [solid-micro](https://github.com/tailwindlabs/heroicons/tree/master/src/16/solid) from `solid-heroicons/solid`, `solid-heroicons/outline`, `solid-heroicons/solid-mini`, and `solid-heroicons/solid-micro`, respectively. 
 They are exported as camel case. Everything exported from those packages are just an object with the SVG path and a metadata to know whether it's been exported from the solid, outline or mini variant.
 
 Those packages are generated automatically via a script from [the heroicon repo](https://github.com/tailwindlabs/heroicons).
@@ -31,12 +31,14 @@ import { Icon } from "solid-heroicons";
 import { arrowLeft } from "solid-heroicons/solid";
 import { arrowRight } from "solid-heroicons/outline";
 import { arrowDown } from "solid-heroicons/solid-mini";
+import { arrowUp } from "solid-heroicons/solid-micro";
 
 const App = () => (
   <>
     <Icon path={arrowLeft} style="width: 24px; color: blue" />
     <Icon path={arrowRight} style="width: 24px; color: green" />
     <Icon path={arrowDown} style="width: 20px; color: yellow" />
+    <Icon path={arrowUp} style="width: 16px; color: red" />
   </>
 );
 

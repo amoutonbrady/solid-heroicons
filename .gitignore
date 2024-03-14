@@ -3,6 +3,7 @@ node_modules
 outline
 solid
 solid-mini
+solid-micro
 
 .yarn/*
 !.yarn/cache
