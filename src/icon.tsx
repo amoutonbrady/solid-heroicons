@@ -27,10 +27,10 @@ interface Props extends JSX.SvgSVGAttributes<SVGSVGElement> {
  * import { arrowDown } from 'solid-heroicons/solid-mini'
  * import { arrowUp } from 'solid-heroicons/solid-micro'
  *
- * const icon = <Icon path={arrowLeft} class="text-gray-900 h-6" />
- * const icon2 = <Icon path={arrowRight} class="text-gray-900 h-6" />
- * const icon3 = <Icon path={arrowDown} class="text-gray-900 h-6" />
- * const icon4 = <Icon path={arrowUp} class="text-gray-900 h-6" />
+ * const icon = <Icon path={arrowLeft} class="text-gray-900 size-6" />
+ * const icon2 = <Icon path={arrowRight} class="text-gray-900 size-6" />
+ * const icon3 = <Icon path={arrowDown} class="text-gray-900 size-5" />
+ * const icon4 = <Icon path={arrowUp} class="text-gray-900 size-4" />
  * ```
  */
 export const Icon: Component<Props> = (props) => {
